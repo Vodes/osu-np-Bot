@@ -1,6 +1,7 @@
 # osu-!np-Bot
 
 ## a basic Twitch Bot written in Java.
+!np tells the chat whatever you're playing/listening to in osu!
 
 ## Things you'll need:
 - StreamCompanion with default outputs (more info in the "info" tab)
