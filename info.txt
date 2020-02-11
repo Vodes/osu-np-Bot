@@ -1,0 +1,5 @@
+Some kind of Tutorial:
+- Keep the default output patterns of StreamCompanion
+- Set the event of all output patterns to "All"
+- DON'T TICK "Disable saving files on disk"
+- DON'T change any file names or patterns (if they are default ones)
