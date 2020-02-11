@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/commons-lang3-3.8.1.jar"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/material-ui-swing-1.1.1_beta.jar"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/pircbotx-2.1.jar"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/vCrypt.jar"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/guava-23.0.jar"/>
+	<classpathentry kind="lib" path="E:/Alex/Java/#Git/libraries/slf4j-api-2.0.0-alpha1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
