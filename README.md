@@ -6,6 +6,7 @@
 ## Things you'll need:
 - StreamCompanion with default outputs (more info in the "info" tab)
 - Your Twitch oAuth Key (use this: https://twitchapps.com/tmi/)
+- Obviously Java. Recommended Version is 8. Haven't tested anything higher.
 
 ## Disclaimer:
 I'm in no way a professional so dont expect the best code you've ever seen.
@@ -17,3 +18,6 @@ I'm in no way a professional so dont expect the best code you've ever seen.
 - pircbotx 2.1 (https://github.com/pircbotx/pircbotx)
 - Google Guava 23.0
 - SLF4j API 2.0.0-Alpha-1
+
+# To Download:
+Grab the latest Release.zip from https://github.com/Vodes/osu-np-Bot/releases/latest and extract.
