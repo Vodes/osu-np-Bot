@@ -15,3 +15,5 @@ I'm in no way a professional so dont expect the best code you've ever seen.
 - material-ui-swing 1.1.1_beta (https://github.com/vincenzopalazzo/material-ui-swing)
 - vCrypt (my custom and pretty basic en- and decryption lib)
 - pircbotx 2.1 (https://github.com/pircbotx/pircbotx)
+- Google Guava 23.0
+- SLF4j API 2.0.0-Alpha-1
