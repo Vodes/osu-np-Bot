@@ -1,0 +1,15 @@
+Here's a commandlist:
+
+- Info/DL/Download/help:
+Posts the Github Link and asks you to do !commands (or whatever your prefix is)
+
+- np/Song/Playing:
+Posts current Song thats playing in osu.
+
+- setCD/setCooldown/cooldown <cooldown in milliseconds>:
+Sets the Cooldown for command-usage in milliseconds.
+Default is 3000ms (3 Seconds).
+
+- setPrefix/prefix <wanted String>
+Sets the Command-Prefix.
+Default is "!" (duh)
