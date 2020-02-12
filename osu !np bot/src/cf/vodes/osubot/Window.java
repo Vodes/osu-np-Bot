@@ -39,6 +39,7 @@ public class Window {
 	private JTextField textField_1;
 	
 	public JLabel lblStatus = new JLabel("");
+	public JLabel labelSC = new JLabel("");
 
 	/**
 	 * Launch the application.
@@ -65,13 +66,13 @@ public class Window {
 		frmOsunpbot = new JFrame();
 		frmOsunpbot.setTitle("osu!np-Bot");
 		frmOsunpbot.setResizable(false);
-		frmOsunpbot.setBounds(100, 100, 450, 400);
+		frmOsunpbot.setBounds(100, 100, 450, 450);
 		frmOsunpbot.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmOsunpbot.getContentPane().setLayout(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setFont(new Font("Dialog", Font.PLAIN, 15));
-		tabbedPane.setBounds(12, -11, 420, 369);
+		tabbedPane.setBounds(12, -11, 420, 420);
 		frmOsunpbot.getContentPane().add(tabbedPane);
 
 		JPanel panel = new JPanel();
@@ -170,11 +171,23 @@ public class Window {
 			public void actionPerformed(ActionEvent e) {
 				lblStatus.setText("Connecting...");
 				new StartBotThread().start();
+				btnStart.setEnabled(false);
 			}
 		});
 		btnStart.setFont(new Font("Dialog", Font.BOLD, 15));
-		btnStart.setBounds(12, 255, 391, 37);
+		btnStart.setBounds(12, 306, 391, 37);
 		panel.add(btnStart);
+		
+		JLabel lblStreamcompanion = new JLabel("StreamCompanion:");
+		lblStreamcompanion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblStreamcompanion.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblStreamcompanion.setBounds(0, 249, 415, 21);
+		panel.add(lblStreamcompanion);
+		
+		labelSC.setHorizontalAlignment(SwingConstants.CENTER);
+		labelSC.setFont(new Font("Dialog", Font.PLAIN, 13));
+		labelSC.setBounds(0, 273, 415, 21);
+		panel.add(labelSC);
 
 		JPanel panel_1 = new JPanel();
 		tabbedPane.addTab("Info", null, panel_1, null);
@@ -222,6 +235,23 @@ public class Window {
 		});
 		btnGetOauthkey.setBounds(257, 255, 146, 37);
 		panel_1.add(btnGetOauthkey);
+		
+		JButton btnCommands = new JButton("Commands");
+		btnCommands.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(Desktop.isDesktopSupported()) {
+					try {
+						Desktop.getDesktop().browse(new URI("https://github.com/Vodes/osu-np-Bot/blob/master/commands.txt"));
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					} catch (URISyntaxException e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		btnCommands.setBounds(12, 304, 146, 37);
+		panel_1.add(btnCommands);
 	}
 
 	public void setUIFont(FontUIResource f) {

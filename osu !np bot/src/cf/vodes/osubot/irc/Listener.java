@@ -22,9 +22,12 @@ public class Listener extends ListenerAdapter{
 	public Configuration config;
 	public Timer timer = new Timer();
 	
+	public String channel;
+	
 	@Override
 	public void onConnect(ConnectEvent event) throws Exception {
-		bot.send().joinChannel("#" + ((String)OptionManager.getOptionValue("Username")).toLowerCase());
+		channel = "#" + ((String)OptionManager.getOptionValue("Username")).toLowerCase();
+		bot.send().joinChannel(channel);
 		Sys.out("IRC connected!");
 		Main.win.lblStatus.setText("<html><font color='lime'>Connected!");
 		super.onConnect(event);
@@ -38,15 +41,12 @@ public class Listener extends ListenerAdapter{
 	
 	@Override
 	public void onMessage(MessageEvent event) throws Exception {
-		Sys.out("Message detected.");
-		if(StringUtils.startsWithIgnoreCase(event.getMessage(), "!np")) {
-			if(timer.hasReached(3000L)) {
-				try {
-					bot.send().message("#" + ((String)OptionManager.getOptionValue("Username")).toLowerCase(), buildMessage());
-					timer.reset();
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
+		if(event.getMessage().startsWith((String)OptionManager.getOptionValue("Command-Prefix"))){
+			float cooldownAsFloat = (float)((double)OptionManager.getOptionValue("Command-Cooldown"));
+			if(timer.hasReached(cooldownAsFloat)) {
+				String name = StringUtils.removeIgnoreCase(event.getMessage().split(" ")[0], (String)OptionManager.getOptionValue("Command-Prefix"));
+				String messageWithoutPrefix = StringUtils.removeIgnoreCase(event.getMessage(), (String)OptionManager.getOptionValue("Command-Prefix"));
+				Main.cmdManager.runCommand(name, messageWithoutPrefix, event.getUser().getNick());
 			}
 		}
 	}
