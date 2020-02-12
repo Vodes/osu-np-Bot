@@ -1,15 +1,32 @@
 Here's a commandlist:
 
+Ones that everyone is allowed to do:
+
 - Info/DL/Download/help:
 Posts the Github Link and asks you to do !commands (or whatever your prefix is)
 
 - np/Song/Playing:
 Posts current Song thats playing in osu.
 
+Ones Only Mods are allowed to do:
+
 - setCD/setCooldown/cooldown <cooldown in milliseconds>:
 Sets the Cooldown for command-usage in milliseconds.
 Default is 3000ms (3 Seconds).
 
+Ones only the Streamer is allowed to do:
+
 - setPrefix/prefix <wanted String>
 Sets the Command-Prefix.
 Default is "!" (duh)
+
+CAUTION: Those are "my kind of" mods. Not real twitch chat mods.
+
+- mod list
+Posts a list of the current mods
+
+- mod <user>
+Makes mentioned user a mod.
+
+- unmod <user>
+Removes mentioned user from the mods.
