@@ -11,6 +11,7 @@
 
 ## Disclaimer:
 I'm in no way a professional so dont expect the best code you've ever seen.
+Demo Video: https://www.youtube.com/watch?v=VEMzHbrBpnw
 
 ## Libraries used:
 - Apache Commons (lang3, io and codec)
