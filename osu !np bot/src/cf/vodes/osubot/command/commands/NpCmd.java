@@ -1,6 +1,7 @@
 package cf.vodes.osubot.command.commands;
 
 import org.apache.commons.io.FileUtils;
+import org.pircbotx.User;
 
 import cf.vodes.osubot.Main;
 import cf.vodes.osubot.command.Command;
@@ -9,13 +10,13 @@ import cf.vodes.osubot.command.permission.PermissionLevel;
 public class NpCmd extends Command{
 
 	public NpCmd() {
-		super(new String[] {"np", "song", "playing"}, PermissionLevel.everyone);
+		super("np", new String[] {"np", "song", "playing"}, PermissionLevel.everyone);
 	}
 	
 	@Override
-	public void run(String message) {
+	public void run(String message, User user) {
 		try {
-			this.respond(buildMessage());
+			this.respond(buildMessage(), user);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -53,6 +53,7 @@ public class StartBotThread extends Thread{
 		Main.listener.bot = new PircBotX(Main.listener.config);
 		try {
 			Main.listener.bot.startBot();
+//			new StartWhisperBot().start();
 		} catch (IOException | IrcException e) {
 			e.printStackTrace();
 		}

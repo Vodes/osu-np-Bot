@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 
+import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.FontUIResource;
@@ -13,6 +14,7 @@ import javax.swing.plaf.FontUIResource;
 import org.apache.commons.io.output.TeeOutputStream;
 
 import cf.vodes.osubot.command.CommandManager;
+import cf.vodes.osubot.command.custom.CCLoader;
 import cf.vodes.osubot.command.permission.Mods;
 import cf.vodes.osubot.irc.Listener;
 import cf.vodes.osubot.options.OptionManager;
@@ -25,7 +27,7 @@ import mdlaf.themes.JMarsDarkTheme;
 public class Main {
 	
 	public static String oauthKey = "";
-	public static final String VERSION = "0.2";
+	public static final String VERSION = "0.3";
 	
 	public static String infotext;
 	
@@ -36,6 +38,7 @@ public class Main {
 	public static Listener listener;
 	
 	public static CommandManager cmdManager;
+	public static CCLoader ccloader;
 	public static Mods mods;
 	
 	public static boolean scRunning = false;
@@ -49,10 +52,12 @@ public class Main {
 		OptionManager.options.add(new OptionString("Command-Prefix", "!"));
 		OptionManager.options.add(new OptionDouble("Command-Cooldown", 3000.0));
 		cmdManager = new CommandManager();
+		ccloader = new CCLoader();
 		files.load();
 		mods = new Mods();
 		mods.init();
 		cmdManager.init();
+		ccloader.load();
 		
 		try {
 			UIManager.setLookAndFeel(new MaterialLookAndFeel());
@@ -64,6 +69,7 @@ public class Main {
 		
 		infotext = Util.resolveText("https://raw.githubusercontent.com/Vodes/osu-np-Bot/master/info.txt");
 		
+		ToolTipManager.sharedInstance().setInitialDelay(200);
 		win = new Window();
 		win.setUIFont(new FontUIResource(new Font("Dialog", Font.PLAIN, 13)));
 		win.initialize();

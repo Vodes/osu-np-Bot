@@ -46,7 +46,8 @@ public class Listener extends ListenerAdapter{
 			if(timer.hasReached(cooldownAsFloat)) {
 				String name = StringUtils.removeIgnoreCase(event.getMessage().split(" ")[0], (String)OptionManager.getOptionValue("Command-Prefix"));
 				String messageWithoutPrefix = StringUtils.removeIgnoreCase(event.getMessage(), (String)OptionManager.getOptionValue("Command-Prefix"));
-				Main.cmdManager.runCommand(name, messageWithoutPrefix, event.getUser().getNick());
+				Main.cmdManager.runCommand(name, messageWithoutPrefix, event.getUser().getNick(), event.getUser());
+				Main.ccloader.runCommand(event.getMessage(), event.getUser());
 			}
 		}
 	}
